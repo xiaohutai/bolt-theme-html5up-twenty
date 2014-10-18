@@ -1,17 +1,19 @@
-## Twenty by HTML5 UP. ##
+## Twenty by HTML5 UP ##
 
 
 ### Introduction ###
 
-This is [http://html5up.net/twenty](Twenty by HTML5 UP) adapted for Bolt! See `README.txt` for notes by the original author of this theme.
+This is [Twenty theme by HTML5 UP](http://html5up.net/twenty) adapted for Bolt! See `README.txt` for notes by the original author of this theme.
 
-Check out `config.yml` for some additional settings. Do clear your cache in Bolt every time you make changes.
+Check out `config.yml` for some additional settings. Do not forget to clear your cache in Bolt every time you make changes.
 
 This theme has a custom template with pagination for overviews and search results.
 
 For your records, you should pick from:
 
- * 
+ * `record.twig` (no sidebar)
+ * `record-sidebar-left.twig`
+ * `record-sidebar-right.twig`
 
 
 ### Contact Page ###
