@@ -1,0 +1,55 @@
+# -----------------------------------------------------------------------
+#
+# Do not forget to clear your cache at example.com/bolt/clearcache
+# after you have made changes to this file
+#
+# See setcontent documentation at https://docs.bolt.cm/content-fetching
+# Or you can edit the queries directly in your templates.
+#
+# -----------------------------------------------------------------------
+
+general:
+  # Pick an icon from http://fortawesome.github.io/Font-Awesome/icons/
+  # This general icon will be shown on every general page.
+  icon: fa-bolt
+  # sidebar items
+  sidebar: 'entries/latest/2'
+  # three items on every page
+  row: 'pages/latest/3'
+
+home:
+  # Newlines will be converted to <br>
+  description: |
+    Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit.
+    
+    Duis interdum varius magna,
+    ac ornare felis tristique at. 
+  more: Tell Me More
+  # homepage big element
+  hero: 'page/1'
+  # homepage 2x2 grid items
+  featured: 'entries/latest/4'
+  # homepage call-to-action at the bottom
+  calltoaction: 'page/2'
+  # call-to-action button text
+  actiontext: Take My Money
+
+social:
+  twitter:
+    url: https://twitter.com/BoltCM
+    title: Bolt
+  facebook: 
+    url: https://facebook.com/
+    title: Facebook
+  google: 
+    url: https://plus.google.com/
+    title: Google+
+  github: 
+    url: https://github.com/bolt/bolt
+    title: Github
+  dribbble: 
+    url: https://dribbble.com/
+    title: Dribbble
+
+copyright: © Untitled 2014

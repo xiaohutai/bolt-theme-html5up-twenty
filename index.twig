@@ -1,0 +1,115 @@
+{% extends 'master.twig' %}
+
+{% block bodyclass %}index{% endblock %}
+
+{% block headerclass %}alt{% endblock %}
+
+        {% block banner %}
+            <section id="banner">
+                <div class="inner">
+                    <header>
+                        <h2>{{ app.config.get('general/sitename') }}</h2>
+                    </header>
+                    {% if theme.home.description is not empty %}<p>{{ theme.home.description|nl2br }}</p>{% endif %}
+                    <footer>
+                        <ul class="buttons vertical">
+                            <li><a href="#main" class="button fit scrolly">{{ theme.home.more }}</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </section>
+        {% endblock banner %}
+
+        {% block main %}
+            <article id="main">
+
+                {% if record is defined %}
+                <header class="special container">
+                    <span class="icon fa-bar-chart-o"></span>
+                    <h2>{{ record.title }}</h2>
+                    {{ record.teaser }}
+                </header>
+                {% endif %}
+
+                {% if theme.home.hero is not empty %}
+                {% setcontent hero = theme.home.hero %}
+                <section class="wrapper style2 container special-alt">
+                    <div class="row half">
+                        <div class="8u">
+                            <header>
+                                <h2>{{ hero.title }}</h2>
+                            </header>
+                            {{ hero.teaser }}
+                        </div>
+                        <div class="4u skel-cell-important">
+                            <ul class="featured-icons">
+                                <li><span class="icon fa-clock-o"><span class="label">Feature 1</span></span></li>
+                                <li><span class="icon fa-volume-up"><span class="label">Feature 2</span></span></li>
+                                <li><span class="icon fa-laptop"><span class="label">Feature 3</span></span></li>
+                                <li><span class="icon fa-inbox"><span class="label">Feature 4</span></span></li>
+                                <li><span class="icon fa-lock"><span class="label">Feature 5</span></span></li>
+                                <li><span class="icon fa-cog"><span class="label">Feature 6</span></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                {% endif %}
+
+                {% include('_row.twig') %}
+
+                {% if theme.home.featured is not empty %}
+                <section class="wrapper style3 container special">
+
+                    <header class="major">
+                        <h2>Latest <strong>entries</strong></h2>
+                    </header>
+
+                    {% setcontent items = theme.home.featured %}
+                    {% for item in items %}
+                    {% if loop.index is odd %}
+                    <div class="row">
+                    {% endif %}
+
+                        <div class="6u">
+                            <section>
+                                <a href="{{ item.link }}" class="image featured"><img src="{{ image(item.image) }}" alt="{{ item.title }}" /></a>
+                                <header>
+                                    <h3>{{ item.title }}</h3>
+                                </header>
+                                {{ item.teaser }}
+                            </section>
+                        </div>
+                    {% if loop.index is even %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+                    <footer class="major">
+                        <ul class="buttons">
+                            <li><a href="/entries" class="button">See More</a></li>
+                        </ul>
+                    </footer>
+
+                </section>
+                {% endif %}
+
+            </article>
+        {% endblock main%}
+
+        {% block cta %}
+            {% if theme.home.calltoaction is not empty %}
+            {% setcontent cta = theme.home.calltoaction %}
+            <section id="cta">
+                <header>
+                    <h2>{{ cta.title }}</h2>
+                    {{ cta.teaser }}
+                </header>
+                <footer>
+                    <ul class="buttons">
+                        <li><a href="{{ cta.link }}" class="button special">{{ theme.home.actiontext }}</a></li>
+                    </ul>
+                </footer>
+            </section>
+
+            {% endif %}
+        {% endblock cta %}

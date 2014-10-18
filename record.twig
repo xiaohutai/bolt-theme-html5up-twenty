@@ -1,0 +1,29 @@
+{% extends 'master.twig' %}
+
+{% block bodyclass %}no-sidebar{% endblock bodyclass %}
+
+{% block main %}
+<article id="main">
+
+    <header class="special container">
+        <span class="icon {{ theme.general.icon }}"></span>
+        <h2>{{ record.title }}</h2>
+        {{ record.teaser }}
+    </header>
+
+    <section class="wrapper style4 container">
+        <div class="content">
+            <section>
+                <a href="{{ record.link }}" class="image featured"><img src="{{ image(record.image) }}" alt="" /></a>
+                <header>
+                    <h3>{% if record.subtitle is not empty %}{{ record.subtitle }}{% else %}{{ record.title }}{% endif %}</h3>
+                </header>
+                {{ record.body }}
+            </section>
+        </div>
+    </section>
+
+    {% include('_row.twig') %}
+        
+</article>
+{% endblock main %}

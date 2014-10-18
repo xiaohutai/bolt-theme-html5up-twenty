@@ -1,0 +1,38 @@
+{% extends 'master.twig' %}
+
+{% block bodyclass %}right-sidebar{% endblock bodyclass %}
+
+{% block main %}
+<article id="main">
+
+    <header class="special container">
+        <span class="icon {{ theme.general.icon }}"></span>
+        <h2>{{ record.title }}</h2>
+        <p>{{ record.introduction }}</p>
+    </header>
+
+    <section class="wrapper style4 container">
+        <div class="row oneandhalf">
+            <div class="8u">
+                <div class="content">
+                    <section>
+                        <a href="#" class="image featured"><img src="{{ paths.theme }}images/pic03.jpg" alt="" /></a>
+                        <header>
+                            <h3>{% if record.subtitle is not empty %}{{ record.subtitle }}{% else %}{{ record.title }}{% endif %}</h3>
+                        </header>
+                        {{ record.body }}
+                    </section>
+                </div>
+            </div>
+            <div class="4u">
+
+                {% include('_sidebar.twig') %}
+
+            </div>
+        </div>                    
+    </section>
+
+    {% include('_row.twig') %}
+        
+</article>
+{% endblock main %}

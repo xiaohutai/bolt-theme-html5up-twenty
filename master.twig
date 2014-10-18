@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+    Twenty by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        {% block head -%}
+        <title>
+        {%- block title -%}
+        {%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
+        {{ app.config.get('general/sitename') }}
+        {%- if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif -%}
+        {%- endblock title -%}
+        </title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script>
+        var paths = {
+            theme : '{{ paths.theme }}'
+        };
+        </script>
+
+        {%- block scripts %}
+
+        <!--[if lte IE 8]><script src="{{ paths.theme }}css/ie/html5shiv.js"></script><![endif]-->
+        <script src="{{ paths.theme }}js/jquery.min.js"></script>
+        <script src="{{ paths.theme }}js/jquery.dropotron.min.js"></script>
+        <script src="{{ paths.theme }}js/jquery.scrolly.min.js"></script>
+        <script src="{{ paths.theme }}js/jquery.scrollgress.min.js"></script>
+        <script src="{{ paths.theme }}js/skel.min.js"></script>
+        <script src="{{ paths.theme }}js/skel-layers.min.js"></script>
+        <script src="{{ paths.theme }}js/init.js"></script>
+
+        {% endblock scripts %}
+
+        {%- block stylesheets %}
+
+        <noscript>
+            <link rel="stylesheet" href="{{ paths.theme }}css/skel.css" />
+            <link rel="stylesheet" href="{{ paths.theme }}css/style.css" />
+            <link rel="stylesheet" href="{{ paths.theme }}css/style-wide.css" />
+            <link rel="stylesheet" href="{{ paths.theme }}css/style-noscript.css" />
+        </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="{{ paths.theme }}css/ie/v8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="{{ paths.theme }}css/ie/v9.css" /><![endif]-->
+
+        {% endblock stylesheets %}
+
+        {%- endblock head %}
+
+    </head>
+    <body class="{% block bodyclass %}{% endblock %}">
+    
+        {% block header %}
+            <header id="header" class="{% block headerclass %}{% endblock %}">
+                <h1 id="logo"><a href="{{ paths.root }}">{{ app.config.get('general/sitename') }}{% if app.config.get('general/payoff') is not empty %} <span>{{ app.config.get('general/payoff') }}</span>{% endif %}</a></h1>
+                <nav id="nav">
+                    <ul>
+                        {{ menu('main', '_menu.twig') }}
+                    </ul>
+                </nav>
+            </header>
+        {% endblock header %}
+
+        {% block banner %}
+        {% endblock banner %}
+
+        {% block main %}
+        {% endblock main %}
+        
+        {% block cta %}
+        {% endblock cta %}
+
+            <footer id="footer">
+                {% block footer %}
+
+                <ul class="icons">
+                    {%- if theme.social.twitter.url is not empty %}
+
+                    <li><a href="{{ theme.social.twitter.url }}" class="icon circle fa-twitter"><span class="label">{{ theme.social.twitter.title|default('Twitter') }}</span></a></li>
+                    {%- endif %}
+                    {%- if theme.social.facebook.url is not empty %}
+
+                    <li><a href="{{ theme.social.facebook.url }}" class="icon circle fa-facebook"><span class="label">{{ theme.social.facebook.title|default('Facebook') }}</span></a></li>
+                    {%- endif %}
+                    {%- if theme.social.google.url is not empty %}
+
+                    <li><a href="{{ theme.social.google.url }}" class="icon circle fa-google-plus"><span class="label">{{ theme.social.google.title|default('Google+') }}</span></a></li>
+                    {%- endif %}
+                    {%- if theme.social.github.url is not empty %}
+
+                    <li><a href="{{ theme.social.github.url }}" class="icon circle fa-github"><span class="label">{{ theme.social.github.title|default('Github') }}</span></a></li>
+                    {%- endif %}
+                    {%- if theme.social.dribbble.url is not empty %}
+
+                    <li><a href="{{ theme.social.dribbble.url }}" class="icon circle fa-dribbble"><span class="label">{{ theme.social.dribbble.title|default('Dribbble') }}</span></a></li>
+                    {%- endif %}
+
+                </ul>
+                
+                <ul class="copyright">
+                    <li>{{ theme.copyright }}</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+                {% endblock footer %}
+
+            </footer>
+
+    </body>
+</html>

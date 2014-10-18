@@ -1,0 +1,46 @@
+{#
+---------------------------------------------------------------------------------------------------
+This is a generic listing page with pagination. By default, this one does not exist in the 
+HTML5UP version. So you might want to tweak this here and there.
+---------------------------------------------------------------------------------------------------
+#}
+{% extends 'master.twig' %}
+
+{% block main %}
+    <article id="main">
+        <section class="wrapper style3 container special">
+
+            <header class="major">
+                {% if taxonomytype is defined %}
+                    <h2>Latest <strong>{% if taxonomy.options[slug] is defined %}{{ taxonomy.options[slug] }}{% else %}{{ slug }}{% endif %}</strong></h2>
+                {% elseif search is defined %}
+                    <h2>{{ __('Search results for <strong> %search% </strong>', { '%search%': search|escape }) }}</h2>
+                {% else %}
+                    <h2>Latest <strong>{{ records|first.contenttype.name }}</strong></h2>
+                {% endif %}
+            </header>
+
+            {% for item in records %}
+            {% if loop.index is odd %}
+            <div class="row">
+            {% endif %}
+
+                <div class="6u">
+                    <section>
+                        <a href="{{ item.link }}" class="image featured"><img src="{{ image(item.image) }}" alt="{{ item.title }}" /></a>
+                        <header>
+                            <h3>{{ item.title }}</h3>
+                        </header>
+                        {{ item.teaser }}
+                    </section>
+                </div>
+            {% if loop.index is even %}
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {{ pager('', 3, '_pagination.twig' ) }}
+
+        </section>
+    </article>
+{% endblock main%}

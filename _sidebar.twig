@@ -1,0 +1,16 @@
+<div class="sidebar">
+    {% setcontent items = theme.general.sidebar limit 2 %}
+    {% for item in items %}
+    <section>
+        <header>
+            <h3>{{ item.title }}</h3>
+        </header>
+        {{ item.teaser }}
+        <footer>
+            <ul class="buttons">
+                <li><a href="{{ item.link }}" class="button small">Read More</a></li>
+            </ul>
+        </footer>
+    </section>
+    {% endfor %}
+</div>
