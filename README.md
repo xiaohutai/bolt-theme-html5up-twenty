@@ -5,6 +5,8 @@
 
 This is [Twenty by HTML5 UP](http://html5up.net/twenty) adapted for Bolt! See `README.txt` for notes by the original author of this theme.
 
+![Preview](preview.png)
+
 ### Configuration
 
 Check out `config.yml` for some additional settings. Do not forget to clear your cache in Bolt every time you make changes.
