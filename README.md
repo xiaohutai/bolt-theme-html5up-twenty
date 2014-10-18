@@ -1,9 +1,11 @@
-## Twenty by HTML5 UP ##
+## Twenty by HTML5 UP
 
 
-### Introduction ###
+### Introduction
 
-This is [Twenty theme by HTML5 UP](http://html5up.net/twenty) adapted for Bolt! See `README.txt` for notes by the original author of this theme.
+This is [Twenty by HTML5 UP](http://html5up.net/twenty) adapted for Bolt! See `README.txt` for notes by the original author of this theme.
+
+### Configuration
 
 Check out `config.yml` for some additional settings. Do not forget to clear your cache in Bolt every time you make changes.
 
@@ -16,7 +18,7 @@ For your records, you should pick from:
  * `record-sidebar-right.twig`
 
 
-### Contact Page ###
+### Contact Page
 
 Enable the **SimpleForms** and define a form with the name `contact` or modify in `contact.twig`.
 Do not forget to assign a page with the `contact.twig` template.
