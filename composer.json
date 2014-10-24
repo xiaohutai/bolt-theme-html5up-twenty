@@ -12,5 +12,10 @@
             "name": "Xiao-Hu Tai",
             "email": "xiao@twokings.nl"
         }
-    ]
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "preview.png"
+        ]
+    }
 }
