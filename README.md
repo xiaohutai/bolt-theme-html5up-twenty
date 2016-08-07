@@ -6,6 +6,8 @@
 
 This is [Twenty by HTML5 UP](http://html5up.net/twenty) adapted for Bolt! See `README.txt` for notes by the original author of this theme.
 
+**Note:**  This is for Bolt 3. Check out the `bolt-v2` branch for a Bolt 2 compatible version.
+
 ### Configuration
 
 Check out `config.yml` for some additional settings. Do not forget to clear your cache in Bolt every time you make changes.
